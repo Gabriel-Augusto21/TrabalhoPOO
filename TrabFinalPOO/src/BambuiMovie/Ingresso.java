@@ -1,0 +1,37 @@
+package BambuiMovie;
+
+import java.util.List;
+
+public class Ingresso extends Sessao { 
+    private double preco;
+    private boolean meiaEntrada;// Indica se o ingresso é meia-entrada (true) ou não (false)
+    private List<Consumivel> consumiveisComprados;// Armazena a lista de consumíveis comprados com o ingresso
+
+    public Ingresso(Filme filme, int horario, int capacidade, double preco, boolean meiaEntrada, List<Consumivel> consumiveisComprados) {
+        super(filme, horario, capacidade); // Chama o construtor da classe pai (Sessao) para inicializar os atributos herdados
+        this.preco = preco; 
+        this.meiaEntrada = meiaEntrada;
+        this.consumiveisComprados = consumiveisComprados; 
+    }
+
+    public double getPreco() {
+        return preco; 
+    }
+
+// Método público para verificar se o ingresso é meia-entrada
+    public boolean isMeiaEntrada() {
+        return meiaEntrada;
+    }
+
+// Método público para obter a lista de consumíveis comprados com o ingresso
+    public List<Consumivel> getConsumiveisComprados() {
+        return consumiveisComprados; 
+    }
+}
+
+/*
+O extends indica que a classe Ingresso herda as propriedades e métodos da classe Sessao
+Isso significa que Ingresso é uma subclasse de Sessao e pode usar todos os métodos e
+atributos definidos em Sessao, além de adicionar suas próprias funcionalidades.
+A palavra-chave super é usada para chamar o construtor da classe pai (Sessao)
+*/

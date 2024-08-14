@@ -1,0 +1,81 @@
+package BambuiMovie;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Cinema {
+    // Atributo que guarda o nome do cinema
+    private String nome;
+
+    // Lista para armazenar objetos da classe Filme, representando os filmes disponíveis no cinema
+    private List<Filme> filmes;
+
+    // Lista para armazenar objetos da classe Sessao, representando as sessões disponíveis no cinema
+    private List<Sessao> sessoes;
+
+    // Lista para armazenar objetos da classe Consumivel, representando os itens como pipoca, refrigerante etc.
+    private List<Consumivel> consumiveis;
+
+    // Construtor da classe Cinema, que inicializa o nome do cinema e as listas de filmes, sessões e consumíveis
+    public Cinema(String nome) {
+        this.nome = nome;  // Define o nome do cinema
+        this.filmes = new ArrayList<>();  // Inicializa a lista de filmes como uma nova ArrayList
+        this.sessoes = new ArrayList<>();  // Inicializa a lista de sessões como uma nova ArrayList
+        this.consumiveis = new ArrayList<>();  // Inicializa a lista de consumíveis como uma nova ArrayList
+    }
+
+    // Método para adicionar um filme à lista de filmes
+    public void adicionarFilme(Filme filme) {
+        filmes.add(filme);  // Adiciona o filme à lista de filmes
+    }
+
+    // Método para adicionar uma sessão à lista de sessões
+    public void adicionarSessao(Sessao sessao) {
+        sessoes.add(sessao);  // Adiciona a sessão à lista de sessões
+    }
+
+    // Método para adicionar um consumível à lista de consumíveis
+    public void adicionarConsumivel(Consumivel consumivel) {
+        consumiveis.add(consumivel);  // Adiciona o consumível à lista de consumíveis
+    }
+
+    // Método que retorna a lista de filmes
+    public List<Filme> getFilmes() {
+        return filmes;
+    }
+
+    // Método para definir a lista de filmes
+    public void setFilmes(List<Filme> filmes) {
+        this.filmes = filmes;
+    }
+
+    // Método que retorna a lista de sessões
+    public List<Sessao> getSessoes() {
+        return sessoes;
+    }
+
+    // Método para definir a lista de sessões
+    public void setSessoes(List<Sessao> sessoes) {
+        this.sessoes = sessoes;
+    }
+
+    // Método que retorna a lista de consumíveis
+    public List<Consumivel> getConsumiveis() {
+        return consumiveis;
+    }
+
+    // Método para definir a lista de consumíveis
+    public void setConsumiveis(List<Consumivel> consumiveis) {
+        this.consumiveis = consumiveis;
+    }
+
+    // Método que retorna o nome do cinema
+    public String getNome() {
+        return nome;
+    }
+
+    // Método para definir o nome do cinema
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+}

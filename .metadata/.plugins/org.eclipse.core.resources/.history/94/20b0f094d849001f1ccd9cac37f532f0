@@ -1,0 +1,37 @@
+package BambuiMovie;
+
+public class Ingresso {
+    private Sessao sessao;
+    private double preco;
+    private boolean meiaEntrada;
+
+    public Ingresso(Sessao sessao, double preco, boolean meiaEntrada) {
+        this.sessao = sessao;
+        this.preco = preco;
+        this.meiaEntrada = meiaEntrada;
+    }
+
+    public Sessao getSessao() {
+        return sessao;
+    }
+
+    public void setSessao(Sessao sessao) {
+        this.sessao = sessao;
+    }
+
+    public double getPreco() {
+        return meiaEntrada ? preco / 2 : preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public boolean isMeiaEntrada() {
+        return meiaEntrada;
+    }
+
+    public void setMeiaEntrada(boolean meiaEntrada) {
+        this.meiaEntrada = meiaEntrada;
+    }
+}

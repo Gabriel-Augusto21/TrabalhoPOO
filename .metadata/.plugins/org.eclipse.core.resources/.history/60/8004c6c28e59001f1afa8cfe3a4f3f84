@@ -1,0 +1,33 @@
+package BambuiMovie;
+
+public class Consumivel {
+    // Declaração dos atributos privados da classe Consumivel
+    private String nome; // Armazena o nome do consumível (ex: "Pipoca", "Refrigerante")
+    private double preco; // Armazena o preço do consumível
+
+    // Construtor da classe Consumivel, que é chamado quando um novo objeto Consumivel é criado
+    public Consumivel(String nome, double preco) {
+        this.nome = nome; // Inicializa o atributo nome com o valor passado no parâmetro
+        this.preco = preco; // Inicializa o atributo preco com o valor passado no parâmetro
+    }
+
+    // Método público para obter o nome do consumível
+    public String getNome() {
+        return nome; // Retorna o valor atual do atributo nome
+    }
+
+    // Método público para definir ou alterar o nome do consumível
+    public void setNome(String nome) {
+        this.nome = nome; // Define o valor do atributo nome com o valor passado no parâmetro
+    }
+
+    // Método público para obter o preço do consumível
+    public double getPreco() {
+        return preco; // Retorna o valor atual do atributo preco
+    }
+
+    // Método público para definir ou alterar o preço do consumível
+    public void setPreco(double preco) {
+        this.preco = preco; // Define o valor do atributo preco com o valor passado no parâmetro
+    }
+}

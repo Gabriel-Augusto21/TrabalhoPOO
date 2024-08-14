@@ -1,0 +1,49 @@
+package BambuiMovie;
+
+// A classe Filme representa um filme com título, gênero e duração.
+public class Filme {
+    
+    // Atributos privados da classe Filme
+    private String titulo;  // O título do filme.
+    private String genero;  // O gênero do filme (por exemplo, ação, drama, comédia, etc.).
+    private int duracao;  // A duração do filme em minutos.
+
+    // Construtor da classe Filme que inicializa os atributos da classe.
+    public Filme(String titulo, String genero, int duracao) {
+        this.titulo = titulo;  // Inicializa o título do filme com o valor passado como argumento.
+        this.genero = genero;  // Inicializa o gênero do filme com o valor passado como argumento.
+        this.duracao = duracao;  // Inicializa a duração do filme com o valor passado como argumento.
+    }
+
+    // Métodos getters e setters para acessar e modificar os atributos da classe.
+
+    // Retorna o título do filme.
+    public String getTitulo() {
+        return titulo;
+    }
+
+    // Define o título do filme.
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    // Retorna o gênero do filme.
+    public String getGenero() {
+        return genero;
+    }
+
+    // Define o gênero do filme.
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    // Retorna a duração do filme em minutos.
+    public int getDuracao() {
+        return duracao;
+    }
+
+    // Define a duração do filme em minutos.
+    public void setDuracao(int duracao) {
+        this.duracao = duracao;
+    }
+}

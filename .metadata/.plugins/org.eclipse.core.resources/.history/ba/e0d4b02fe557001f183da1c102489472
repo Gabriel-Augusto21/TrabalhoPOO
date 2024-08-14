@@ -1,0 +1,72 @@
+package BambuiMovie;
+
+// A classe Sessao representa uma exibição específica de um filme em um determinado horário e com uma certa capacidade de público.
+public class Sessao {
+    
+    // Atributos privados da classe Sessao
+    private Filme filme;  // O filme que será exibido nesta sessão.
+    private int horario;  // O horário em que a sessão ocorrerá (pode ser representado, por exemplo, como um valor inteiro para horas, como 14 para 14h00).
+    private int capacidade;  // A capacidade máxima de espectadores que podem assistir à sessão.
+    private int ingressosVendidos;  // O número de ingressos já vendidos para essa sessão.
+
+    // Construtor da classe Sessao que inicializa os atributos da classe.
+    public Sessao(Filme filme, int horario, int capacidade) {
+        this.filme = filme;  // Inicializa o filme da sessão com o filme passado como argumento.
+        this.horario = horario;  // Inicializa o horário da sessão com o valor passado como argumento.
+        this.capacidade = capacidade;  // Inicializa a capacidade da sessão com o valor passado como argumento.
+        this.ingressosVendidos = 0;  // Inicializa a contagem de ingressos vendidos como 0 (a sessão começa sem nenhum ingresso vendido).
+    }
+
+    // Método para vender um ingresso para a sessão.
+    // Retorna true se o ingresso foi vendido com sucesso, ou false se a sessão já estiver lotada.
+    public boolean venderIngresso() {
+        if (ingressosVendidos < capacidade) {  // Verifica se ainda há capacidade para vender mais ingressos.
+            ingressosVendidos++;  // Incrementa o número de ingressos vendidos.
+            return true;  // Retorna true indicando que o ingresso foi vendido com sucesso.
+        } else {
+            return false;  // Retorna false indicando que a sessão está lotada e não é possível vender mais ingressos.
+        }
+    }
+
+    // Métodos getters e setters para acessar e modificar os atributos da classe.
+
+    // Retorna o filme associado a esta sessão.
+    public Filme getFilme() {
+        return filme;
+    }
+
+    // Define o filme associado a esta sessão.
+    public void setFilme(Filme filme) {
+        this.filme = filme;
+    }
+
+    // Retorna o horário da sessão.
+    public int getHorario() {
+        return horario;
+    }
+
+    // Define o horário da sessão.
+    public void setHorario(int horario) {
+        this.horario = horario;
+    }
+
+    // Retorna a capacidade máxima de espectadores para a sessão.
+    public int getCapacidade() {
+        return capacidade;
+    }
+
+    // Define a capacidade máxima de espectadores para a sessão.
+    public void setCapacidade(int capacidade) {
+        this.capacidade = capacidade;
+    }
+
+    // Retorna o número de ingressos já vendidos para a sessão.
+    public int getIngressosVendidos() {
+        return ingressosVendidos;
+    }
+
+    // Define o número de ingressos vendidos para a sessão (usado principalmente para ajustar o valor em situações especiais).
+    public void setIngressosVendidos(int ingressosVendidos) {
+        this.ingressosVendidos = ingressosVendidos;
+    }
+}

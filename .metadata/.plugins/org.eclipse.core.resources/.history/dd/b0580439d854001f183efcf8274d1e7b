@@ -1,0 +1,58 @@
+package BambuiMovie;
+
+import java.time.LocalDateTime;
+
+public class Sessao {
+    private Filme filme;
+    private LocalDateTime horario;
+    private int capacidade;
+    private int ingressosVendidos;
+
+    public Sessao(Filme filme, LocalDateTime horario, int capacidade) {
+        this.filme = filme;
+        this.horario = horario;
+        this.capacidade = capacidade;
+        this.ingressosVendidos = 0;
+    }
+
+    public boolean venderIngresso() {
+        if (ingressosVendidos < capacidade) {
+            ingressosVendidos++;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public Filme getFilme() {
+        return filme;
+    }
+
+    public void setFilme(Filme filme) {
+        this.filme = filme;
+    }
+
+    public LocalDateTime getHorario() {
+        return horario;
+    }
+
+    public void setHorario(LocalDateTime horario) {
+        this.horario = horario;
+    }
+
+    public int getCapacidade() {
+        return capacidade;
+    }
+
+    public void setCapacidade(int capacidade) {
+        this.capacidade = capacidade;
+    }
+
+    public int getIngressosVendidos() {
+        return ingressosVendidos;
+    }
+
+    public void setIngressosVendidos(int ingressosVendidos) {
+        this.ingressosVendidos = ingressosVendidos;
+    }
+}

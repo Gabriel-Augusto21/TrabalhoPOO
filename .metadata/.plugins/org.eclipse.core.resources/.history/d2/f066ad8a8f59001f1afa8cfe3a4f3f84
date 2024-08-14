@@ -1,0 +1,33 @@
+package BambuiMovie;
+
+import java.util.List;
+
+public class Ingresso extends Sessao { 
+    // Declaração dos atributos privados da classe Ingresso
+    private double preco; // Armazena o preço do ingresso
+    private boolean meiaEntrada; // Indica se o ingresso é meia-entrada (true) ou não (false)
+    private List<Consumivel> consumiveisComprados; // Armazena a lista de consumíveis comprados com o ingresso
+
+    // Construtor da classe Ingresso, que é chamado quando um novo objeto Ingresso é criado
+    public Ingresso(Filme filme, int horario, int capacidade, double preco, boolean meiaEntrada, List<Consumivel> consumiveisComprados) {
+        super(filme, horario, capacidade); // Chama o construtor da classe pai (Sessao) para inicializar os atributos herdados
+        this.preco = preco; // Inicializa o atributo preco com o valor passado no parâmetro
+        this.meiaEntrada = meiaEntrada; // Inicializa o atributo meiaEntrada com o valor passado no parâmetro
+        this.consumiveisComprados = consumiveisComprados; // Inicializa a lista de consumíveis comprados com o valor passado no parâmetro
+    }
+
+    // Método público para obter o preço do ingresso
+    public double getPreco() {
+        return preco; // Retorna o valor atual do atributo preco
+    }
+
+    // Método público para verificar se o ingresso é meia-entrada
+    public boolean isMeiaEntrada() {
+        return meiaEntrada; // Retorna o valor atual do atributo meiaEntrada
+    }
+
+    // Método público para obter a lista de consumíveis comprados com o ingresso
+    public List<Consumivel> getConsumiveisComprados() {
+        return consumiveisComprados; // Retorna a lista de consumíveis comprados
+    }
+}

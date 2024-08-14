@@ -1,0 +1,53 @@
+package BambuiMovie;
+
+import java.util.List;
+
+public class Sessao {
+    private String filme;
+    private String horario;
+    private String sala;
+
+    public Sessao(String filme, String horario, String sala) {
+        this.filme = filme;
+        this.horario = horario;
+        this.sala = sala;
+    }
+
+    public String getFilme() {
+        return filme;
+    }
+
+    public String getHorario() {
+        return horario;
+    }
+
+    public String getSala() {
+        return sala;
+    }
+}
+
+
+public class Ingresso extends Sessao {
+    private double preco;
+    private boolean meiaEntrada;
+    private List<Consumivel> consumiveisComprados;
+
+    public Ingresso(String filme, String horario, String sala, double preco, boolean meiaEntrada, List<Consumivel> consumiveisComprados) {
+        super(filme, horario, sala);
+        this.preco = preco;
+        this.meiaEntrada = meiaEntrada;
+        this.consumiveisComprados = consumiveisComprados;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public boolean isMeiaEntrada() {
+        return meiaEntrada;
+    }
+
+    public List<Consumivel> getConsumiveisComprados() {
+        return consumiveisComprados;
+    }
+}
