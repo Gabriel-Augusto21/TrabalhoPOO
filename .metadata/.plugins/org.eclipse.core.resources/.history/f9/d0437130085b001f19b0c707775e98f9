@@ -87,6 +87,7 @@ public class Aplicacao {
         }
     }
 
+    int quantidadeIngressos;
     public static void comprarIngresso(Cinema cinema, List<Cliente> clientes, List<Ingresso> ingressosVendidos, Scanner scanner) {
         System.out.println("Digite seu nome:");
         String nome = scanner.nextLine();
@@ -108,25 +109,25 @@ public class Aplicacao {
         Sessao sessaoEscolhida = cinema.getSessoes().get(escolhaSessao - 1);
 
         System.out.println("Quantos ingressos deseja comprar?");
-        int quantidade = scanner.nextInt();
+        int quantidadeIngressos = scanner.nextInt();
 
         double precoIngresso = 20.0; 
         double precoIngressoMeia = 12.0; 
         double total = 0;
         List<Consumivel> consumiveisComprados = new ArrayList<>(); 
 
-        for (int i = 0; i < quantidade; i++) {
+        for (int i = 0; i < quantidadeIngressos; i++) {
             boolean meiaEntrada = idade < 18;
 
             if (sessaoEscolhida.venderIngresso() && meiaEntrada) {
-            	Ingresso ingresso = new Ingresso(sessaoEscolhida.getFilme(), sessaoEscolhida.getHorario(), sessaoEscolhida.getCapacidade(), precoIngressoMeia, meiaEntrada, consumiveisComprados, quantidade);
+            	Ingresso ingresso = new Ingresso(sessaoEscolhida.getFilme(), sessaoEscolhida.getHorario(), sessaoEscolhida.getCapacidade(), precoIngressoMeia, meiaEntrada, consumiveisComprados);
                 ingressosVendidos.add(ingresso);
-                total += ingresso.getPreco()* quantidade;
+                total += ingresso.getPreco()* quantidadeIngressos;
                 System.out.println("Ingresso comprado para a sessão: " + sessaoEscolhida.getFilme().getTitulo());
             } else {
-            	Ingresso ingresso = new Ingresso(sessaoEscolhida.getFilme(), sessaoEscolhida.getHorario(), sessaoEscolhida.getCapacidade(), precoIngresso, meiaEntrada, consumiveisComprados, quantidade);
+            	Ingresso ingresso = new Ingresso(sessaoEscolhida.getFilme(), sessaoEscolhida.getHorario(), sessaoEscolhida.getCapacidade(), precoIngresso, meiaEntrada, consumiveisComprados);
             	ingressosVendidos.add(ingresso);
-            	total += ingresso.getPreco() * quantidade;
+            	total += ingresso.getPreco() * quantidadeIngressos;
                 System.out.println("Ingresso comprado para a sessão: " + sessaoEscolhida.getFilme().getTitulo());
                 break;
             }
@@ -174,7 +175,7 @@ public class Aplicacao {
         // Loop simples para somar o valor dos ingressos vendidos e consumíveis
         for (int i = 0; i < ingressosVendidos.size(); i++) {
             Ingresso ingresso = ingressosVendidos.get(i);
-            double precoTotal = ingresso.getPreco() * ingresso.getQuantidade();
+            double precoTotal = ingresso.getPreco() * quantidadeIngresso;
 
             // Soma o preço dos consumíveis comprados junto com o ingresso
             List<Consumivel> consumiveisComprados = ingresso.getConsumiveisComprados();
@@ -191,8 +192,8 @@ public class Aplicacao {
             }
         }
 
-        System.out.println("Total(em dinheiro) de ingressos vendidos antes das 17 horas: R$" + totalAntes17);
-        System.out.println("Total(em dinheiro) de ingressos vendidos depois das 17 horas: R$" + totalDepois17);
+        System.out.println("Total de ingressos vendidos antes das 17 horas: R$" + totalAntes17);
+        System.out.println("Total de ingressos vendidos depois das 17 horas: R$" + totalDepois17);
     }
 
     public static void mostrarFilaClientes(List<Cliente> clientes) {

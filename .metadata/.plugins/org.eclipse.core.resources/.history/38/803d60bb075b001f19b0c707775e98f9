@@ -6,14 +6,12 @@ public class Ingresso extends Sessao {
     private double preco;
     private boolean meiaEntrada;// Indica se o ingresso é meia-entrada (true) ou não (false)
     private List<Consumivel> consumiveisComprados;// Armazena a lista de consumíveis comprados com o ingresso
-    private int quantidade;
 
-    public Ingresso(Filme filme, int horario, int capacidade, double preco, boolean meiaEntrada, List<Consumivel> consumiveisComprados, int quantidade) {
+    public Ingresso(Filme filme, int horario, int capacidade, double preco, boolean meiaEntrada, List<Consumivel> consumiveisComprados) {
         super(filme, horario, capacidade); // Chama o construtor da classe pai (Sessao) para inicializar os atributos herdados
         this.preco = preco; 
         this.meiaEntrada = meiaEntrada;
         this.consumiveisComprados = consumiveisComprados; 
-        this.quantidade = quantidade;
     }
 
     public double getPreco() {
@@ -29,11 +27,7 @@ public class Ingresso extends Sessao {
     public List<Consumivel> getConsumiveisComprados() {
         return consumiveisComprados; 
     }
-    public int getQuantidade() {
-    	return quantidade;
-    }
 }
-
 
 /*
 O extends indica que a classe Ingresso herda as propriedades e métodos da classe Sessao

@@ -191,8 +191,8 @@ public class Aplicacao {
             }
         }
 
-        System.out.println("Total(em dinheiro) de ingressos vendidos antes das 17 horas: R$" + totalAntes17);
-        System.out.println("Total(em dinheiro) de ingressos vendidos depois das 17 horas: R$" + totalDepois17);
+        System.out.println("Total de ingressos vendidos antes das 17 horas: R$" + totalAntes17);
+        System.out.println("Total de ingressos vendidos depois das 17 horas: R$" + totalDepois17);
     }
 
     public static void mostrarFilaClientes(List<Cliente> clientes) {

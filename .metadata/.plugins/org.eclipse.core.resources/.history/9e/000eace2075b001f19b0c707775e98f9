@@ -6,7 +6,6 @@ public class Ingresso extends Sessao {
     private double preco;
     private boolean meiaEntrada;// Indica se o ingresso é meia-entrada (true) ou não (false)
     private List<Consumivel> consumiveisComprados;// Armazena a lista de consumíveis comprados com o ingresso
-    private int quantidade;
 
     public Ingresso(Filme filme, int horario, int capacidade, double preco, boolean meiaEntrada, List<Consumivel> consumiveisComprados, int quantidade) {
         super(filme, horario, capacidade); // Chama o construtor da classe pai (Sessao) para inicializar os atributos herdados
